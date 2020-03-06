@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import css from './style.module.css';
 import { getQueryString, formateDate } from 'src/utils';
 import { SOME_INFORMATION } from 'src/constants';
-import Business from 'src/components/Page/Business';
 
 const Page: React.FC = () => {
   const [date, setDate] = useState(new Date());
@@ -22,7 +21,6 @@ const Page: React.FC = () => {
       <p>Come from: {getQueryString('from') || 'unknown'}</p>
       <p>Current time: {formateDate(date)}</p>
       <p>Information: {SOME_INFORMATION}</p>
-      <Business />
     </div>
   );
 };

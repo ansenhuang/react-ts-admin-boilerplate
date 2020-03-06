@@ -12,9 +12,7 @@ const AdminLayout: React.FC<{
       <AdminHeader />
       <Layout>
         <AdminSider pathname={location.pathname} />
-        <Layout.Content style={{ overflowY: 'auto' }}>
-          {children}
-        </Layout.Content>
+        <Layout.Content style={{ overflow: 'auto' }}>{children}</Layout.Content>
       </Layout>
     </Layout>
   );

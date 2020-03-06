@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon } from 'antd';
+import { LoadingOutlined } from '@ant-design/icons';
 import css from './style.module.css';
 
 const sizeMap = {
@@ -13,7 +13,7 @@ const Loading: React.FC<{
 }> = ({ size, children }) => {
   return (
     <div className={css.loading}>
-      <Icon type="loading" style={{ fontSize: size && sizeMap[size] }} />
+      <LoadingOutlined style={{ fontSize: size && sizeMap[size] }} />
       {children}
     </div>
   );

@@ -32,7 +32,9 @@ const App: React.FC = () => {
               Layout ? (
                 <Layout {...props}>{routeChildren}</Layout>
               ) : (
-                routeChildren
+                <div style={{ height: '100vh', overflow: 'auto' }}>
+                  {routeChildren}
+                </div>
               );
           }
           return <Route key={route.path} {...props} />;

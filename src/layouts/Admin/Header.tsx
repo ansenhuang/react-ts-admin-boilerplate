@@ -10,7 +10,7 @@ const Header: React.FC = () => {
       <div className={css.logo} />
       <Menu theme="dark" mode="horizontal" style={{ lineHeight: '64px' }}>
         {headerLinks.map(item => (
-          <Menu.Item>
+          <Menu.Item key={item.path}>
             <Link to={item.path + (item.search || '')}>{item.text}</Link>
           </Menu.Item>
         ))}
