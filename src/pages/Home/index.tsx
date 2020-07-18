@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from 'antd';
 import './index.module.css';
 
-const Page: React.FC = () => {
+const Home: React.FC = () => {
   return (
     <div styleName="home">
       <h1>Home</h1>
@@ -15,4 +15,4 @@ const Page: React.FC = () => {
   );
 };
 
-export default Page;
+export default Home;

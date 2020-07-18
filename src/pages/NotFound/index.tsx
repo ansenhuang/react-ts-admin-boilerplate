@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.module.css';
 
-const Page: React.FC = () => {
+const NotFound: React.FC = () => {
   return (
     <div styleName="notFound">
       <h1>404</h1>
@@ -9,4 +9,4 @@ const Page: React.FC = () => {
   );
 };
 
-export default Page;
+export default NotFound;

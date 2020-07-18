@@ -3,7 +3,7 @@ import './index.module.css';
 import { getQueryString, formateDate } from 'src/utils';
 import { SOME_INFORMATION } from 'src/constants';
 
-const Page: React.FC = () => {
+const Dashboard: React.FC = () => {
   const [date, setDate] = useState(new Date());
 
   const timer = setTimeout(() => {
@@ -25,4 +25,4 @@ const Page: React.FC = () => {
   );
 };
 
-export default Page;
+export default Dashboard;
