@@ -24,7 +24,6 @@ const getClientEnvironment = require('./env');
 const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 const ForkTsCheckerWebpackPlugin = require('react-dev-utils/ForkTsCheckerWebpackPlugin');
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
-const { LOCAL_IDENT_NAME } = require('./consts');
 
 const appPackageJson = require(paths.appPackageJson);
 
@@ -425,7 +424,7 @@ module.exports = function(webpackEnv) {
                 importLoaders: 1,
                 sourceMap: isEnvProduction && shouldUseSourceMap,
                 modules: {
-                  localIdentName: LOCAL_IDENT_NAME,
+                  localIdentName: '[local]___[hash:base64:5]',
                 },
               }),
             },

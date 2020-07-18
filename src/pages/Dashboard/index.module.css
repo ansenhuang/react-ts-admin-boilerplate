@@ -2,3 +2,7 @@
   position: relative;
   padding: 20px;
 }
+
+.is-from-home {
+  background-color: aquamarine;
+}

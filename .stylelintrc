@@ -4,5 +4,10 @@
   ],
   "ignoreFiles": [
     "node_modules/**"
-  ]
+  ],
+  "rules": {
+    "selector-pseudo-class-no-unknown": [true, {
+      "ignorePseudoClasses": ["global"]
+    }]
+  }
 }
