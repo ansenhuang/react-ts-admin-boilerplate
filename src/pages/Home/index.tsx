@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'antd';
-import css from './style.module.css';
+import './index.module.css';
 
 const Page: React.FC = () => {
   return (
-    <div className={css.home}>
+    <div styleName="home">
       <h1>Home</h1>
       <p>This is the page without layout.</p>
       <Button type="primary">

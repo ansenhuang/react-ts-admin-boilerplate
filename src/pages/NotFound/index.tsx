@@ -1,9 +1,9 @@
 import React from 'react';
-import css from './style.module.css';
+import './index.module.css';
 
 const Page: React.FC = () => {
   return (
-    <div className={css.notFound}>
+    <div styleName="notFound">
       <h1>404</h1>
     </div>
   );

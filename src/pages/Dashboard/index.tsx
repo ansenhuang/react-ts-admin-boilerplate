@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import css from './style.module.css';
+import './index.module.css';
 import { getQueryString, formateDate } from 'src/utils';
 import { SOME_INFORMATION } from 'src/constants';
 
@@ -15,7 +15,7 @@ const Page: React.FC = () => {
   }, [timer]);
 
   return (
-    <div className={css.dashboard}>
+    <div styleName="dashboard">
       <h1>Dashboard</h1>
       <p>Here is your page content.</p>
       <p>Come from: {getQueryString('from') || 'unknown'}</p>
