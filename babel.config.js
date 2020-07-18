@@ -1,3 +1,4 @@
+const { LOCAL_IDENT_NAME } = require('./config/consts');
 const isTestEnv = process.env.NODE_ENV === 'test';
 
 module.exports = {
@@ -11,5 +12,12 @@ module.exports = {
         style: true,
       },
     ],
+    [
+      'react-css-modules',
+      {
+        exclude: 'node_modules',
+        generateScopedName: LOCAL_IDENT_NAME,
+      },
+    ]
   ],
 };
