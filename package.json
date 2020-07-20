@@ -1,5 +1,6 @@
 {
-  "name": "react-ts-admin-boilerplate",
+  "name": "react-ts-mmm",
+  "title": "页面标题",
   "version": "0.1.0",
   "private": true,
   "scripts": {
