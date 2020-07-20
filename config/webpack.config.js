@@ -619,8 +619,8 @@ module.exports = function(webpackEnv) {
         }),
       new StylelintPlugin({
         files: [
-          '**/*.css',
-          '**/*.less',
+          'src/**/*.css',
+          'src/**/*.less',
         ],
       }),
     ].filter(Boolean),
