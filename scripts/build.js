@@ -92,6 +92,12 @@ checkBrowsers(paths.appPath, isInteractive)
         WARN_AFTER_CHUNK_GZIP_SIZE
       );
       console.log();
+
+      fs.writeJson(path.join(__dirname, '../stats.json'), stats.toJson())
+        .then(() => {})
+        .catch(err => {
+          console.error(err);
+        });
     },
     err => {
       const tscCompileOnError = process.env.TSC_COMPILE_ON_ERROR === 'true';

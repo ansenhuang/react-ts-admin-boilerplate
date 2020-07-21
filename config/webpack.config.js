@@ -13,9 +13,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const safePostCssParser = require('postcss-safe-parser');
-const ManifestPlugin = require('webpack-manifest-plugin');
 const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
-const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const paths = require('./paths');
@@ -106,6 +104,19 @@ module.exports = function(webpackEnv) {
       );
     }
     return loaders;
+  };
+  // splitChunks at node_modules
+  // groups: [{ name, modules, ...rest }]
+  const getChunksFromNodeModules = (groups) => {
+    return groups.reduce((o, curr) => {
+      const { name, modules, ...rest } = curr;
+      o[name] = {
+        name,
+        test: new RegExp(`[\\\\/]node_modules[\\\\/](${modules.join('|')})[\\\\/]`),
+        ...rest,
+      };
+      return o;
+    }, {});
   };
 
   return {
@@ -243,6 +254,26 @@ module.exports = function(webpackEnv) {
       splitChunks: {
         chunks: 'all',
         name: false,
+        cacheGroups: getChunksFromNodeModules([
+          {
+            name: 'react',
+            modules: ['react', 'react-dom', 'scheduler'],
+            priority: 10,
+            reuseExistingChunk: true,
+          },
+          {
+            name: 'router',
+            modules: ['react-router', 'react-router-dom', 'history'],
+            priority: 20,
+            reuseExistingChunk: true,
+          },
+          {
+            name: 'antd',
+            modules: ['antd', '@ant-design'],
+            priority: 30,
+            reuseExistingChunk: true,
+          },
+        ]),
       },
       // Keep the runtime chunk separated to enable long term caching
       // https://twitter.com/wSokra/status/969679223278505985
