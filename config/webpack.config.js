@@ -258,19 +258,13 @@ module.exports = function(webpackEnv) {
           {
             name: 'react',
             modules: ['react', 'react-dom', 'scheduler'],
-            priority: 10,
+            priority: 100,
             reuseExistingChunk: true,
           },
           {
             name: 'router',
             modules: ['react-router', 'react-router-dom', 'history'],
-            priority: 20,
-            reuseExistingChunk: true,
-          },
-          {
-            name: 'antd',
-            modules: ['antd', '@ant-design'],
-            priority: 30,
+            priority: 90,
             reuseExistingChunk: true,
           },
         ]),
