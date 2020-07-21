@@ -261,12 +261,6 @@ module.exports = function(webpackEnv) {
             priority: 100,
             reuseExistingChunk: true,
           },
-          {
-            name: 'router',
-            modules: ['react-router', 'react-router-dom', 'history'],
-            priority: 90,
-            reuseExistingChunk: true,
-          },
         ]),
       },
       // Keep the runtime chunk separated to enable long term caching
